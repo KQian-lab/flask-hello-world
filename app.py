@@ -22,7 +22,6 @@ def testing():
 @app.route('/db_create')
 def create():
     conn = psycopg2.connect("postgres://lab_10_db_vxl3_user:N0Pzj8hQDKtJ8iaruo6lUrtrdNtbuej9@dpg-co669gq1hbls73b5f0r0-a/lab_10_db_vxl3")
-    conn.close()
     cur = conn.cursor()
     cur.execute('''
     CREATE TABLE IF NOT EXISTS Basketball(
@@ -40,7 +39,6 @@ def create():
 @app.route('/db_insert', methods=['POST'])
 def db_insert():
     conn = psycopg2.connect("postgres://lab_10_db_vxl3_user:N0Pzj8hQDKtJ8iaruo6lUrtrdNtbuej9@dpg-co669gq1hbls73b5f0r0-a/lab_10_db_vxl3")
-    conn.close()
     cursor = conn.cursor()
     cursor.execute("""
     INSERT INTO Basketball (First, Last, City, Name, Number) VALUES
