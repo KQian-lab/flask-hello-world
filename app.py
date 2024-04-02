@@ -36,7 +36,7 @@ def create():
     conn.close()
     return "Create successful"
 
-@app.route('/db_insert', methods=['POST'])
+@app.route('/db_insert')
 def db_insert():
     conn = psycopg2.connect("postgres://lab_10_db_vxl3_user:N0Pzj8hQDKtJ8iaruo6lUrtrdNtbuej9@dpg-co669gq1hbls73b5f0r0-a/lab_10_db_vxl3")
     cursor = conn.cursor()
